@@ -1,25 +1,49 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="common/head :: head_fragment(title = 'カクテル言葉', scripts = ~{::script}, links = ~{::link})"></head>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head
+	th:replace="common/head :: head_fragment(title = 'カクテル言葉', scripts = ~{::script}, links = ~{::link})"></head>
+<title>CSS</title>
+<style>
+h1 {
+	font-size: 80px;
+	background-color: red;
+	widht: 800px;
+	height: 100px;
+}
+
+img.example1 {
+	width: 1000px;
+	height: 600px;
+}
+</style>
 <body>
-  <div class="container">
-    <h1>カクテル言葉</h1>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>言葉カテゴリ</th>
-          <th>カクテル名</th>
-          <th>言葉</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr th:each="cocktail : ${cocktailwords}" th:object="${cocktail}" class="align-middle">
-          <td th:text="*{wordscategory}"></td>
-          <td th:text="*{cocktailwordsname}"></td>
-          <td th:text="*{words}"></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+	<div class="container">
+		<h1>カクテル言葉</h1>
+
+
+		<p>
+			<img
+				src="https://cdn.macaro-ni.jp/assets/img/shutterstock/shutterstock_225472294.jpg"
+				class="example1">
+		</p>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+
+					<th>カクテル一覧</th>
+
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="cocktail : ${cocktailwords}" th:object="${cocktail}"
+					class="align-middle">
+					<td><a th:text="*{cocktailwordsname}"
+						class="btn btn-secondary">詳細</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </body>
 </html>
