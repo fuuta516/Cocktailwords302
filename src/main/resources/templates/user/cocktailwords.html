@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/head :: head_fragment(title = 'カクテル言葉', scripts = ~{::script}, links = ~{::link})"></head>
+<body>
+  <div class="container">
+    <h1>カクテル言葉</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>言葉カテゴリ</th>
+          <th>カクテル名</th>
+          <th>言葉</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="cocktail : ${cocktailwords}" th:object="${cocktail}" class="align-middle">
+          <td th:text="*{wordscategory}"></td>
+          <td th:text="*{cocktailwordsname}"></td>
+          <td th:text="*{words}"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

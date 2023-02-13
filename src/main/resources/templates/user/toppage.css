@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+h1{
+  padding: 180px 0 100px 0;
+  background-size: cover;
+  text-align: center;
+}
+
+
+.list{
+  padding: 8px 24px;
+  color: white;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #239b76;
+}
+
+.love{
+	padding: 8px 24px;
+  color: white;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #d63384;
+}
+
+.friendship{
+	padding: 8px 24px;
+  color: white;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: blue;
+}
+.self-enlightenment{
+	padding: 8px 24px;
+  color: white;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: green;
+  
+}
