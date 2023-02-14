@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.demo.dto.ReviewRequest;
+import com.example.demo.entity.Cocktailrecipe;
 import com.example.demo.entity.Cocktailwords;
 import com.example.demo.entity.Review;
+import com.example.demo.service.CocktailrecipeService;
 import com.example.demo.service.CocktailwordsService;
 import com.example.demo.service.ReviewService;
 
@@ -25,6 +27,7 @@ public class CocktailController {
 	
 	@Autowired
 	private ReviewService reviewService;
+	private CocktailrecipeService cocktailrecipeService;
 	
 	/*
 	 * トップページ表示
@@ -60,7 +63,9 @@ public class CocktailController {
 	  */
 	 @GetMapping(value = "/user/recipe")
 	  public String displayreview(Model model, String cocktailwordsname) {
+		List<Cocktailrecipe> cocktailrecipe = cocktailrecipeService.findByIdcategory(cocktailwordsname);
 	    List<Review> review = reviewService.findByIdcategory(cocktailwordsname);
+	    model.addAttribute("cocktailrecipe", cocktailrecipe);
 	    model.addAttribute("review", review);
 	  //レシピページにレビュー欄を表示させる
 	    model.addAttribute("reviewRequest", new ReviewRequest());
