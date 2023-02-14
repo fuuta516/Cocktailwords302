@@ -36,7 +36,6 @@ public class CocktailController {
 	public String displaytoppage() {
 		return "user/toppage";
 	}
-	
 	/*
 	 * カクテル言葉全件（一覧）
 	 */

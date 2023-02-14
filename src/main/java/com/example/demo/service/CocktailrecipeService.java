@@ -17,6 +17,8 @@ import com.example.demo.repository.CocktailrecipeRepository;
 @Service
 @Transactional(rollbackFor = Exception.class)
 public class CocktailrecipeService {
+	
+	Cocktailrecipe cocktailrecipe;
   /**
    * カクテル言葉
    */
@@ -35,13 +37,12 @@ public class CocktailrecipeService {
    */
   public Cocktailrecipe findByIdcategory(String cocktailwordsname) {
 	  List<Cocktailrecipe> list = searchAll();
-	  Cocktailrecipe cocktailrecipe  = null;
 	  for(int i = 0; i<list.size(); i++) {
 		  if(list.get(i).getCocktailwordsname().equals(cocktailwordsname) ){
-			  cocktailrecipe = list.get(i);
+			  this.cocktailrecipe = list.get(i);
 		  }
 	  }
-    return cocktailrecipe;
+    return this.cocktailrecipe;
   }
 
 }
