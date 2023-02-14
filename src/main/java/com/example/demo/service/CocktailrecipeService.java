@@ -1,6 +1,5 @@
 package com.example.demo.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,15 +33,15 @@ public class CocktailrecipeService {
   /**
    * カクテルレシピ　カクテル名検索
    */
-  public ArrayList<Cocktailrecipe> findByIdcategory(String cocktailwordsname) {
+  public Cocktailrecipe findByIdcategory(String cocktailwordsname) {
 	  List<Cocktailrecipe> list = searchAll();
-	  ArrayList<Cocktailrecipe> list2 = new ArrayList<Cocktailrecipe>() ;
+	  Cocktailrecipe cocktailrecipe  = null;
 	  for(int i = 0; i<list.size(); i++) {
 		  if(list.get(i).getCocktailwordsname().equals(cocktailwordsname) ){
-			  list2.add(list.get(i));
+			  cocktailrecipe = list.get(i);
 		  }
 	  }
-    return list2;
+    return cocktailrecipe;
   }
 
 }
