@@ -3,35 +3,35 @@
   xmlns:th="http://www.thymeleaf.org">
 <head
   th:replace="common/head :: head_fragment(title = 'レビュー', scripts = ~{::script}, links = ~{::link})"></head>
-  <link rel="stylesheet" href="cocktailrecipe.css">
   
   </head>
+  
+  <link rel="stylesheet" th:href="@{/css/cocktailrecipe.css}">
 <body>
- <div>
-		<h1 class="cp_h1title">カクテル名</h1>
 
-	</div>
+
+ <div>
+   <p th:text="*{cocktailrecipe.cocktailwordsname}"></p>
+
+</div>
 
 
 
 	<div class="flex">
 		<figure class="image">
-			<img
-				src="https://www.suntory.co.jp/wnb/img/cocktail/p_laurel_forest.gif"
-				alt="">
+			<img src="*{cocktailrecipe.imageurl}"alt="">
 		</figure>
 		<div class="right">
 			<p class="title">
-				【材料】ジャパニーズクラフトリキュール奏＜抹茶＞<br>ウーロン茶
-			</p>
+				【材料】<br><p th:text="*{cocktailrecipe.material}"></p>
+		
 			<br>
 			<p class="title2">
-				【作り方】<br>氷を入れたタンブラーに「奏＜抹茶＞」を注ぎ、烏龍茶で満たす。
-			</p>
+				【作り方】<br><p th:text="*{cocktailrecipe.words}"></p>
+			
 			<p class="text"></p>
 		</div>
 	</div>
-
 
 
 	<!-- 口コミ情報を追加　ここから -->
@@ -73,18 +73,18 @@
 			<form method="post">
 	<div>
 		<label for="view_name">	ニックネーム</label>
-		<input id="view_name" type="text" name="view_name" value="">
+		<br><input id="view_name" type="text" name="view_name" value="">
 	</div>
 
-				<select name="hoge">
+				<br><select name="gender">
 					<option>性別</option>
 					<option value="1">男</option>
 					<option value="2">女</option>
 				</select>
 				
-				<br>
+				<br><br>
 				
-				<select name="hoge">
+				<select name="age">
 					<option>年代</option>
 					<option value="1">20代</option>
 					<option value="2">30代</option>
@@ -96,10 +96,11 @@
 				</select>
 				
 				<br>
-				<br>
+				
 
-				<div class="evaluation" style="float: left;">
-					<input id="score1" type="radio" name="score" value="5" /> <label
+				<br><div class="evaluation" style="float: left;">
+					<input id="score1" type="radio" name="score" value="5" />評価<br><br>
+					 <label
 						for="score1"><span class="text">最高</span>★</label> <input
 						id="score2" type="radio" name="score" value="4" /> <label
 						for="score2"><span class="text">良い</span>★</label> <input
@@ -110,9 +111,11 @@
 						id="score5" type="radio" name="score" value="1" /> <label
 						for="score5"><span class="text">最悪</span>★</label>
 				</div>
+				<br><br>
+				
 				<div>
 				<br><br><label for="message">コメント</label>
-		<br><textarea id="message" name="message"></textarea>
+		<br> <textarea cols="30" rows="5">入力欄</textarea>
 	</div>
 
 </form>

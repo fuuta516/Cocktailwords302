@@ -27,6 +27,8 @@ public class CocktailController {
 	
 	@Autowired
 	private ReviewService reviewService;
+	
+	@Autowired
 	private CocktailrecipeService cocktailrecipeService;
 	
 	/*
@@ -62,8 +64,8 @@ public class CocktailController {
 	  */
 	 @GetMapping(value = "/user/recipe")
 	  public String displayreview(Model model, String cocktailwordsname) {
-		Cocktailrecipe cocktailrecipe = cocktailrecipeService.findByIdcategory(cocktailwordsname);
-	    List<Review> review = reviewService.findByIdcategory(cocktailwordsname);
+		Cocktailrecipe cocktailrecipe = cocktailrecipeService.findByIdcategory("アプリコットクーラー");
+	    List<Review> review = reviewService.findByIdcategory("アプリコットクーラー");
 	    model.addAttribute("cocktailrecipe", cocktailrecipe);
 	    model.addAttribute("review", review);
 	  //レシピページにレビュー欄を表示させる
