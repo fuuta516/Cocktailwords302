@@ -41,7 +41,7 @@ public class CocktailController {
 	/*
 	 * カクテル言葉全件（一覧）
 	 */
-	 @GetMapping(value = "/user/cocktailwords")
+	 @GetMapping(value = "user/gojuuon")
 	  public String displaycocktailwords(Model model) {
 	    List<Cocktailwords> cocktailwords = cocktailwordsService.searchAll();
 	    model.addAttribute("cocktailwords", cocktailwords);
