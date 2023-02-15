@@ -2,12 +2,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
+	
 <head
 	th:replace="common/head :: head_fragment(title = 'カクテル言葉', scripts = ~{::script}, links = ~{::link})">
 </head>
-<link rel="stylesheet" href="toppage.css">
-<body>
 
+<link th:href="@{/css/toppage.css}" rel="stylesheet" type="text/css"/>
+<body>
 	<a th:href="@{/user/cocktailwords}" class="btn list">一覧</a>
 	
 	<div class="title">
