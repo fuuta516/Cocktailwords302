@@ -2,16 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 
-
-
-
 <head>
-<meta charset="UTF-8">
+<!--  <meta charset="UTF-8">-->
 <title>カクテル一覧</title>
 </head>
 <meta http-equiv="Content-Style-Type" content="text/css">
-
-
 
 <body>
 	<!-- 初めのページに戻る -->
@@ -30,10 +25,10 @@
 
 			<dl th:each="ct : ${cocktailwords}">
 				<dt>
-					<a th:href="@{recipe}" th:text="${ct.cocktailwordsname}"></a>
+					<a th:href="@{/user/recipe/{cocktailwordsname}(cocktailwordsname=${ct.cocktailwordsname})}" th:text="${ct.cocktailwordsname}"></a>
 				</dt>
 
-				<dt></dt>
+				<dt></dt> 
 				<dt th:text="${ct.words}"></dt>
 
 			</dl>

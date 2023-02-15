@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -53,7 +54,7 @@ public class CocktailController {
 	  * カクテル言葉　カテゴリー検索
 	  */
 	 @GetMapping(value = "/user/{wordscategory}")
-	  public String displaycocktailwordscategory(Model model, String wordscategory) {
+	  public String displaycocktailwordscategory(Model model, @PathVariable String wordscategory) {
 	    List<Cocktailwords> cocktailwords = cocktailwordsService.findByIdcategory(wordscategory);
 	    model.addAttribute("cocktailwords", cocktailwords);
 	    return "user/cocktailwords";
@@ -62,10 +63,10 @@ public class CocktailController {
 	 /*
 	  * レシピページの呼び出し (カクテル名で絞り込み)
 	  */
-	 @GetMapping(value = "/user/recipe")
-	  public String displayreview(Model model, String cocktailwordsname) {
-		Cocktailrecipe cocktailrecipe = cocktailrecipeService.findByIdcategory("アプリコットクーラー");
-	    List<Review> review = reviewService.findByIdcategory("アプリコットクーラー");
+	 @GetMapping(value = "/user/recipe/{cocktailwordsname}")
+	  public String displayreview(Model model, @PathVariable String cocktailwordsname) {
+		Cocktailrecipe cocktailrecipe = cocktailrecipeService.findByIdcategory(cocktailwordsname);
+	    List<Review> review = reviewService.findByIdcategory(cocktailwordsname);
 	    model.addAttribute("cocktailrecipe", cocktailrecipe);
 	    model.addAttribute("review", review);
 	  //レシピページにレビュー欄を表示させる
