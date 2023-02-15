@@ -1,10 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+
+
+
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>カクテル一覧</title>
 </head>
-<body>
+<meta http-equiv="Content-Style-Type" content="text/css">
 
+
+
+<body>
+	<!-- 初めのページに戻る -->
+
+	
+
+	<div>
+		<!-- ページトップ -->
+		<h1>カクテル一覧</h1>
+		<!-- トップ写真 -->
+		<img
+			src="https://otokonokakurega.com/wp-content/uploads/2021/06/490f17474880c2c900a57a1c6932436d-3.jpg.webp"
+			class="img-fluid" alt="...">
+		<!-- 一覧リンク -->
+		<div>
+
+			<dl th:each="ct : ${cocktailwords}">
+				<dt>
+					<a th:href="@{recipe}" th:text="${ct.cocktailwordsname}"></a>
+				</dt>
+
+				<dt></dt>
+				<dt th:text="${ct.words}"></dt>
+
+			</dl>
+		</div>
+
+
+
+
+	</div>
 </body>
 </html>
