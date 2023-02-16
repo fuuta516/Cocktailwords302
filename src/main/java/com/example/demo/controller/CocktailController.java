@@ -77,12 +77,13 @@ public class CocktailController {
 	 /*
 	  * レビュー入力時の処理
 	  */
-	 @RequestMapping(value = "/review/create", method = RequestMethod.POST)
-	  public String create(@ModelAttribute ReviewRequest reviewRequest, Model model) {
+	 @RequestMapping(value = "/review/create/{cocktailwordsname}", method = RequestMethod.POST)
+	  public String create(@ModelAttribute ReviewRequest reviewRequest, Model model,
+			  @PathVariable String cocktailwordsname) {
 
 	    // ユーザー情報の登録
 		reviewService.create(reviewRequest);
-	    return "redirect:/user/recipe";
+	    return "redirect:/user/recipe/{cocktailwordsname}";
 	    
 	 }
 
