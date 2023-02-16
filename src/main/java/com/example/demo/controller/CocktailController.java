@@ -94,8 +94,10 @@ public class CocktailController {
 	 
 	 @GetMapping(value = "/user/yougo")
 	 public String displayyougo(Model model) {
+		 Cocktailrecipe cocktailrecipe = cocktailrecipeService.findByIdcategory("XYZ");
 		 List<Yougo> yougo = yougoService.searchAll();
 		 model.addAttribute("yougo", yougo);
+		 model.addAttribute("cocktailrecipe", cocktailrecipe);
 		 return "user/yougo";
 	 }
 
