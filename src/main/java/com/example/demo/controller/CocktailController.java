@@ -16,9 +16,11 @@ import com.example.demo.dto.ReviewRequest;
 import com.example.demo.entity.Cocktailrecipe;
 import com.example.demo.entity.Cocktailwords;
 import com.example.demo.entity.Review;
+import com.example.demo.entity.Yougo;
 import com.example.demo.service.CocktailrecipeService;
 import com.example.demo.service.CocktailwordsService;
 import com.example.demo.service.ReviewService;
+import com.example.demo.service.YougoService;
 
 @Controller
 public class CocktailController {
@@ -31,6 +33,9 @@ public class CocktailController {
 	
 	@Autowired
 	private CocktailrecipeService cocktailrecipeService;
+	
+	@Autowired
+	private YougoService yougoService;
 	
 	/*
 	 * トップページ表示
@@ -85,6 +90,13 @@ public class CocktailController {
 		reviewService.create(reviewRequest);
 	    return "redirect:/user/recipe/{cocktailwordsname}";
 	    
+	 }
+	 
+	 @GetMapping(value = "/user/yougo")
+	 public String displayyougo(Model model) {
+		 List<Yougo> yougo = yougoService.searchAll();
+		 model.addAttribute("yougo", yougo);
+		 return "user/yougo";
 	 }
 
 }

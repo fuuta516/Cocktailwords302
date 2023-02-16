@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+	
+<head
+	th:replace="common/head :: head_fragment(title = 'カクテル製法用語', scripts = ~{::script}, links = ~{::link})">
+</head>
+<body>
+	<div class="container">
+	
+    <h1>カクテル製法用語</h1>
+    <img th:src = "@{/image/{Cocktailimage}(Cocktailimage = XYZ.jpg)}"/>
+    
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>用語</th>
+          <th>説明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="yougo : ${yougo}" class="align-middle">
+          <td th:text="${yougo.yougo}"></td>
+          <td th:text="${yougo.mean}"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+</body>
+</html>
