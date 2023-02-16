@@ -5,6 +5,8 @@
 .container{
 	padding: 0.1em 0.3em;
 	border-left: 10px solid #00BCD4;
+	
+	
 }
 
 
@@ -24,23 +26,39 @@
   margin: 0 0 0 20px;
   padding: 0;
 }
-.flex .title {
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
-  font-size: 18px;
+.cp_table *, .cp_table *:before, .cp_table *:after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
-.flex .title2 {
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
-  font-size: 18px;
+.cp_table {
+	width: 100%;
+	border-collapse: collapse;
 }
-.flex .text {
-  margin: 10px 0 0;
-  padding: 0;
+.cp_table th, .cp_table  td {
+	padding: 10px;
+	border: 1px solid #dddddd;
+}
+.cp_table th {
+	width: 30%;
+	text-align: left;
+	background: #CCFFFF;
+}
+@media only screen and (max-width:480px) {
+	.cp_table {
+		margin: 0;
+	}
+	.cp_table th, .cp_table td {
+		width: 100%;
+		display: block;
+		border-top: none;
+	}
+	.cp_table tr:first-child th {
+		border-top: 1px solid #dddddd;
+	}
 }
 3.　画像＋タイトル＋テキ
+
+/* カクテル言葉 */
 
 /* スコア入力の★ */
 .evaluation{
@@ -72,6 +90,7 @@
 .evaluation input[type='radio']:checked ~ label{
   color: #ffcc33;
 }
+
 
 /* レビュー欄 */
 
@@ -142,7 +161,7 @@ textarea {
 .star-rating {
   position: relative;
   width: 5em;
-  height: 1em;
+  height: 150px;
   font-size: 25px;
 
 }
