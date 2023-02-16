@@ -57,8 +57,8 @@
 				<div class="chatting">
 					<div class="says">
 						<div class="star-rating">
-							<div class="star-rating-front" style="width: {{">★★★★★</div>
-							<div class="star-rating-back">★★★★★</div>
+							<div class="star-rating-front" style="width: {{"></div>
+							<div class="star-rating-back"></div>
 							<table>
 	                          <tbody>
 	  
@@ -69,6 +69,7 @@
           <td th:text="${user.age}"></td>
           <td th:text="${user.evaluation}"></td>
           <td th:text="${user.comment}"></td>
+          
 	  </tr>
       </tbody>
 </table>
@@ -102,7 +103,7 @@
       </tbody>
 </table>*/</style>
 
-			<form th:action="@{/user/recipe/{cocktailwordsname}(cocktailwordsname=${cocktailrecipe.cocktailwordsname})}" th:object="${reviewRequest}"th:method="post">
+			<form th:action="@{/review/create/{cocktailwordsname}(cocktailwordsname=${cocktailrecipe.cocktailwordsname})}" th:object="${reviewRequest}"th:method="RequestMethod.post">
 				<div>
 					<label for="view_name"> ニックネーム</label> <br> 
 					<input type="text" th:field="${reviewRequest.nickname}" class="form-control">
@@ -112,27 +113,28 @@
 				<label for="view_gender"> 性別</label>
 				<select name="gender" th:field="${reviewRequest.gender}" class=
 				"form-control">
-					<option value="1"></option>
-					<option value="2">男</option>
-					<option value="3">女</option>
+					<option value=""></option>
+					<option value="男">男</option>
+					<option value="女">女</option>
 					
 				</select> <br> <br> <label for="view_age"> 年代</label>
 				<select name="age" th:field="${reviewRequest.age}" class="form-control">
-					<option value="1"></option>
-					<option value="2">20代</option>
-					<option value="3">30代</option>
-					<option value="4">40代</option>
-					<option value="5">50代</option>
-					<option value="6">60代</option>
-					<option value="7">70代</option>
-					<option value="8">80代</option>
+					<option value=""></option>
+					<option value="20代">20代</option>
+					<option value="30代">30代</option>
+					<option value="40代">40代</option>
+					<option value="50代">50代</option>
+					<option value="60代">60代</option>
+					<option value="70代">70代</option>
+					<option value="80代">80代</option>
 					
 				</select> <br> <br>
 				<label for="view_age"> 評価</label><br><br>
 				<div class="evaluation" style="float: left;">
-					<input id="score1" type="radio" name="score" value="5" th:field="${reviewRequest.evaluation}" class="form-control"/>
+					<input id="score1" type="radio" name="score" value="5"  th:field="${reviewRequest.evaluation}"class="form-control"/>
 					<br> <label for="score1"><span class="text">最高</span>★</label>
-					<input id="score2" type="radio" name="score" value="4" /> <label
+					<input
+					id="score2" type="radio" name="score" value="4" /> <label
 						for="score2"><span class="text">良い</span>★</label> <input
 						id="score3" type="radio" name="score" value="3" /> <label
 						for="score3"><span class="text">普通</span>★</label> <input
@@ -144,8 +146,8 @@
 				<br> <br>
 
 				<div>
-					<br> <br>  <label for="message" th:field="${reviewRequest.comment}" class="form-control">コメント</label> <br>
-					<textarea cols="30" rows="5">入力欄</textarea>
+					<br> <br>  <label >コメント</label> <br>
+					<input type="text" th:field="${reviewRequest.comment}" class="form-control">
 				</div>
 				
 				<br />
