@@ -6,37 +6,68 @@
 <!--  <meta charset="UTF-8">-->
 <title>カクテル一覧</title>
 </head>
+<link th:href="@{/css/gojuuon.css}" rel="stylesheet" type="text/css" />
 <meta http-equiv="Content-Style-Type" content="text/css">
 
 <body>
+<!-- 背景 -->
+<div class="container"> 
+
+</div>
 	<!-- 初めのページに戻る -->
 
+
+	<!-- ページトップ -->
+	<div style="font-size: 20pt">
+		<p class="container" th:text="カクテル一覧"></p>
+	</div>
+
+	<!-- トップ写真 -->
+	<div class="cp_cssslider">
+	<div class="cp_slidewrapper">
+		<div class="cp_slide_item"><img src="https://otokonokakurega.com/wp-content/uploads/2021/06/490f17474880c2c900a57a1c6932436d-3.jpg.webp"width="700" height="400"></div>
+		<div class="cp_slide_item"><img src="https://www.atpress.ne.jp/releases/196181/img_196181_1.jpg"width="900" height="550"></div>
+		<div class="cp_slide_item"><img src="https://assets.blog.engoo.com/wp-content/uploads/sites/15/2022/07/06180637/shutterstock_1721710870.jpg.webp"width="700" height="400"></div>
+		<div class="cp_slide_item"><img src="https://stg-wordpress.s3.ap-northeast-1.amazonaws.com/blog/wp-content/uploads/2017/05/AdobeStock_261040396-1024x683.jpg"width="700" height="400"></div>
+		
+	</div>
+</div>
+
+
+
+<div>
+<button type="button" class="btn btn-primary btn-lg">ア</button>
+<button type="button" class="btn btn-primary btn-lg">カ</button>
+<button type="button" class="btn btn-primary btn-lg">サ</button>
+<button type="button" class="btn btn-primary btn-lg">タ</button>
+<button type="button" class="btn btn-primary btn-lg">ナ</button>
+<button type="button" class="btn btn-primary btn-lg">ハ</button>
+<button type="button" class="btn btn-primary btn-lg">マ</button>
+<button type="button" class="btn btn-primary btn-lg">ヤ</button>
+<button type="button" class="btn btn-primary btn-lg">ラ</button>
+<button type="button" class="btn btn-primary btn-lg">ワ</button>
+</div>
+
+	<!-- 一覧リンク(カクテル名) -->
+	<div style="font-size: 16pt">
 	
+	<dl th:each="ct : ${cocktailwords}">
+			<dt><a
+					th:href="@{/user/recipe/{cocktailwordsname}(cocktailwordsname=${ct.cocktailwordsname})}"
+					th:text="${ct.cocktailwordsname}"></a>
+			</dt>
+			<!-- 一覧リンク（カクテル言葉） -->
+			<dt style="font-size: 12pt" >
+				<a class="fst-italic" th:text=" カクテル言葉：+${ct.words}"></a>
+			</dt>
 
-	<div>
-		<!-- ページトップ -->
-		<h1>カクテル一覧</h1>
-		<!-- トップ写真 -->
-		<img
-			src="https://otokonokakurega.com/wp-content/uploads/2021/06/490f17474880c2c900a57a1c6932436d-3.jpg.webp"
-			class="img-fluid" alt="...">
-		<!-- 一覧リンク -->
-		<div>
-
-			<dl th:each="ct : ${cocktailwords}">
-				<dt>
-					<a th:href="@{/user/recipe/{cocktailwordsname}(cocktailwordsname=${ct.cocktailwordsname})}" th:text="${ct.cocktailwordsname}"></a>
-				</dt>
-
-				<dt></dt> 
-				<dt th:text="${ct.words}"></dt>
-
-			</dl>
-		</div>
-
-
-
+		</dl>
 
 	</div>
+
+
+
+
+
 </body>
 </html>

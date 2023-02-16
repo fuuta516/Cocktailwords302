@@ -6,44 +6,48 @@
 <title>CSS</title>
 <style>
 h1 {
-	font-size: 80px;
-	background-color: red;
+	font-size: 30px;
 	widht: 800px;
 	height: 100px;
 }
+.title{color:red}
 
 img.example1 {
 	width: 1000px;
-	height: 600px;
+	height: 300px;
 }
 </style>
 <body>
 	<div class="container">
-		<h1>カクテル言葉</h1>
+		
+		<div class="title">
+		<h1>CocktailWords</h1>
+		
+	</div>
 
 
 		<p>
+
+
 			<img
-				src="https://cdn.macaro-ni.jp/assets/img/shutterstock/shutterstock_225472294.jpg"
+				src="https://cocktaillog.com/ja/assets/images/all_list_banner_01.jpg"
 				class="example1">
+				<h1>カクテル一覧</h1>
 		</p>
-		<table class="table table-striped">
-			<thead>
-				<tr>
+		<div>
 
-					<th>カクテル一覧</th>
+			<dl th:each="ct : ${cocktailwords}">
+				<dt>
+					<a th:href="@{/user/recipe/{cocktailwordsname}(cocktailwordsname=${ct.cocktailwordsname})}
+					" th:text="${ct.cocktailwordsname}"></a>
+				</dt>
 
+				<dt></dt> 
+				<dt th:text="${ct.words}"></dt>
 
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="cocktail : ${cocktailwords}" th:object="${cocktail}"
-					class="align-middle">
-					<td><a th:text="*{cocktailwordsname}"
-						class="btn btn-secondary">詳細</a></td>
-				</tr>
-			</tbody>
-		</table>
+			</dl>
+		</div>
+		
 	</div>
 </body>
 </html>
