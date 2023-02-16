@@ -5,12 +5,51 @@
 	th:replace="common/head :: head_fragment(title = 'カクテル言葉', scripts = ~{::script}, links = ~{::link})"></head>
 <title>CSS</title>
 <style>
+.title { 
+	background-color : black;
+	width: 200px;
+	height: 50px;
+	font-size: 30px;
+	color: white;
+
+}
+li{list-style: none;
+ }
+ .list{font-size: 20px;
+ }
+
+.home {
+	float: right;
+	font-size: 20px;
+}
+
+.love {
+	color: fuchsia;
+}
+
+.friendship {
+	color: blue;
+}
+
+.self-enlightenment {
+	color: green;
+}
+
+.unrequited-love {
+	color: yellow;
+}
+
+.broken-heart {
+	color: purple;
+}
+
+.Aggressive {
+	color: red;
+}
+
 h1 {
 	font-size: 30px;
-	widht: 800px;
-	height: 100px;
 }
-.title{color:red}
 
 img.example1 {
 	width: 1000px;
@@ -19,11 +58,28 @@ img.example1 {
 </style>
 <body>
 	<div class="container">
-		
-		<div class="title">
-		<h1>CocktailWords</h1>
-		
-	</div>
+
+		<ul>
+			<li class="title">CocktailWords</li>
+			<li><a th:href="@{/user/toppage}" class="home">ホーム</a></li>
+			<li><a th:href="@{/user/gojuuon}" class="list">一覧</a></li>
+		</ul>
+
+		<div class="button">
+			<a th:href="@{/user/{wordscategory}(wordscategory=恋愛系)}" class="love">恋愛系</a>
+			<a th:href="@{/user/{wordscategory}(wordscategory=友情編)}"
+				class="friendship">友情系</a> <a
+				th:href="@{/user/{wordscategory}(wordscategory=自己啓発系)}"
+				class="self-enlightenment">自己啓発系</a> <a
+				th:href="@{/user/{wordscategory}(wordscategory=片思い)}"
+				class="unrequited-love">片思い系</a> <a
+				th:href="@{/user/{wordscategory}(wordscategory=失恋)}"
+				class="broken-heart">失恋系</a> <a
+				th:href="@{/user/{wordscategory}(wordscategory=積極系)}"
+				class="Aggressive">積極系</a>
+		</div>
+
+
 
 
 		<p>
@@ -32,22 +88,25 @@ img.example1 {
 			<img
 				src="https://cocktaillog.com/ja/assets/images/all_list_banner_01.jpg"
 				class="example1">
-				<h1>カクテル一覧</h1>
-		</p>
+		<h1>カクテル一覧</h1>
+
+
 		<div>
 
 			<dl th:each="ct : ${cocktailwords}">
 				<dt>
-					<a th:href="@{/user/recipe/{cocktailwordsname}(cocktailwordsname=${ct.cocktailwordsname})}
-					" th:text="${ct.cocktailwordsname}"></a>
+					<a
+						th:href="@{/user/recipe/{cocktailwordsname}(cocktailwordsname=${ct.cocktailwordsname})}
+					"
+						th:text="${ct.cocktailwordsname}"></a>
 				</dt>
 
-				<dt></dt> 
+				<dt></dt>
 				<dt th:text="${ct.words}"></dt>
 
 			</dl>
 		</div>
-		
+
 	</div>
 </body>
 </html>
