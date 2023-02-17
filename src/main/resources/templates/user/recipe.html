@@ -21,7 +21,8 @@
 	<!-- 画像と横の表　ここから -->
 	<div class="flex">
 		<figure class="image">
-			<img th:src="@{/image/{Cocktailimage}(Cocktailimage = ${cocktailrecipe.cocktailwordsname} + .jpg)}" >
+			<img
+				th:src="@{/image/{Cocktailimage}(Cocktailimage = ${cocktailrecipe.cocktailwordsname} + .jpg)}">
 		</figure>
 		<div class="right">
 			<table class="cp_table">
@@ -37,9 +38,22 @@
 
 		</div>
 	</div>
-	
-		
-	
+
+<table>
+								<tbody>
+
+									<tr th:each="user : ${review}" class="align-middle">
+										<td th:text="*{#dates.format(user.hiduke, 'yyyy/MM/dd')}"></td>
+										<td th:text="*{user.nickname}"></td>
+										<td th:text="*{user.gender}"></td>
+										<td th:text="*{user.age}"></td>
+										<td th:text="*{user.evaluation}"></td>
+										<td th:text="*{user.comment}"></td>
+
+									</tr>
+								</tbody>
+							</table>
+
 	<!-- 口コミ情報を追加　ここから -->
 	<br>
 	<div class="row">
@@ -60,20 +74,20 @@
 							<div class="star-rating-front" style="width: {{"></div>
 							<div class="star-rating-back"></div>
 							<table>
-	                          <tbody>
-	  
-	       <tr th:each="user : ${review}"  class="align-middle">
-          <td th:text="${#dates.format(user.hiduke, 'yyyy/MM/dd')}"></td>
-          <td th:text="${user.nickname}"></td>
-          <td th:text="${user.gender}"></td>
-          <td th:text="${user.age}"></td>
-          <td th:text="${user.evaluation}"></td>
-          <td th:text="${user.comment}"></td>
-          
-	  </tr>
-      </tbody>
-</table>
-                        </div>
+								<tbody>
+
+									<tr th:each="user : ${review}" class="align-middle">
+										<td th:text="*{#dates.format(user.hiduke, 'yyyy/MM/dd')}"></td>
+										<td th:text="*{user.nickname}"></td>
+										<td th:text="*{user.gender}"></td>
+										<td th:text="*{user.age}"></td>
+										<td th:text="*{user.evaluation}"></td>
+										<td th:text="*{user.comment}"></td>
+
+									</tr>
+								</tbody>
+							</table>
+						</div>
 						<br>
 						<p></p>
 						<p class="small"></p>
@@ -81,7 +95,7 @@
 				</div>
 			</div>
 
-<style>/*</span><table>
+			<style>/*</span><table>
 
 
 
@@ -101,24 +115,25 @@
           
         </tr>
       </tbody>
-</table>*/</style>
+</table>*/
+</style>
 
-			<form th:action="@{/review/create/{cocktailwordsname}(cocktailwordsname=${cocktailrecipe.cocktailwordsname})}" th:object="${reviewRequest}"th:method="RequestMethod.post">
+			<form
+				th:action="@{/review/create/{cocktailwordsname}(cocktailwordsname=${cocktailrecipe.cocktailwordsname})}"
+				th:object="${reviewRequest}" th:method="RequestMethod.post">
 				<div>
-					<label for="view_name"> ニックネーム</label> <br> 
-					<input type="text" th:field="${reviewRequest.nickname}" class="form-control">
+					<label for="view_name"> ニックネーム</label> <br> <input type="text"
+						th:field="${reviewRequest.nickname}" class="form-control">
 				</div>
 
-				<br> 
-				<label for="view_gender"> 性別</label>
-				<select name="gender" th:field="${reviewRequest.gender}" class=
-				"form-control">
+				<br> <label for="view_gender"> 性別</label> <select name="gender"
+					th:field="${reviewRequest.gender}" class="form-control">
 					<option value=""></option>
 					<option value="男">男</option>
 					<option value="女">女</option>
-					
-				</select> <br> <br> <label for="view_age"> 年代</label>
-				<select name="age" th:field="${reviewRequest.age}" class="form-control">
+
+				</select> <br> <br> <label for="view_age"> 年代</label> <select
+					name="age" th:field="${reviewRequest.age}" class="form-control">
 					<option value=""></option>
 					<option value="20代">20代</option>
 					<option value="30代">30代</option>
@@ -127,14 +142,14 @@
 					<option value="60代">60代</option>
 					<option value="70代">70代</option>
 					<option value="80代">80代</option>
-					
-				</select> <br> <br>
-				<label for="view_age"> 評価</label><br><br>
+
+				</select> <br> <br> <label for="view_age"> 評価</label><br>
+				<br>
 				<div class="evaluation" style="float: left;">
-					<input id="score1" type="radio" name="score" value="5"  th:field="${reviewRequest.evaluation}"class="form-control"/>
-					<br> <label for="score1"><span class="text">最高</span>★</label>
-					<input
-					id="score2" type="radio" name="score" value="4" /> <label
+					<input id="score1" type="radio" name="score" value="5"
+						th:field="${reviewRequest.evaluation}" class="form-control" /> <br>
+					<label for="score1"><span class="text">最高</span>★</label> <input
+						id="score2" type="radio" name="score" value="4" /> <label
 						for="score2"><span class="text">良い</span>★</label> <input
 						id="score3" type="radio" name="score" value="3" /> <label
 						for="score3"><span class="text">普通</span>★</label> <input
@@ -146,18 +161,17 @@
 				<br> <br>
 
 				<div>
-					<br> <br>  <label >コメント</label> <br>
-					<input type="text" th:field="${reviewRequest.comment}" class="form-control">
+					<br> <br> <label>コメント</label> <br> <input
+						type="text" th:field="${reviewRequest.comment}"
+						class="form-control">
 				</div>
-				
-				<br />
-				
-			<input type="submit" value="　投稿する　" class="btn btn-primary">
 
-		
-			
+				<br /> <input type="submit" value="　投稿する　" class="btn btn-primary">
+
+
+
 			</form>
-			
+
 		</div>
 
 	</div>

@@ -44,6 +44,13 @@ public class ReviewService {
 			  list2.add(list.get(i));
 		  }
 	  }
+	  
+	  for(int i = 0; i<list.size(); i++) {
+		  System.out.println(list.get(i).getNickname());
+	  }
+	  for(int i = 0; i<list2.size(); i++) {
+		  System.out.println(list2.get(i).getNickname());
+	  }
     return list2;
   }
   
