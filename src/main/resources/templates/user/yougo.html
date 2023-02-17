@@ -9,7 +9,7 @@
 <body>
 	<div class="container">
 	
-    <h1>カクテル製法用語</h1>
+    <h1>CocktailTerm</h1>
     
     <table class="table table-striped">
       <thead>
@@ -18,15 +18,14 @@
           <th>説明</th>
         </tr>
       </thead>
+      
       <tbody>
         <tr th:each="yougo : ${yougo}" class="align-middle">
-        
           <td th:text="${yougo.yougo}"></td>
           <td th:text="${yougo.mean}"></td>
         </tr>
       </tbody>
     </table>
   </div>
-  
 </body>
 </html>
