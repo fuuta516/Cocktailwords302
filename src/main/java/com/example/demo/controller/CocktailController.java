@@ -100,5 +100,14 @@ public class CocktailController {
 		 model.addAttribute("cocktailrecipe", cocktailrecipe);
 		 return "user/yougo";
 	 }
+	 
+	 @RequestMapping(value = "/user/cocktailwords/{ini}", method = RequestMethod.POST)
+	  public String initial(Model model,@PathVariable String ini) {
+		 List<Cocktailwords> cocktailwords = cocktailwordsService.findByinitial(ini);
+		 model.addAttribute("cocktailwords", cocktailwords);
+		 
+	    return "redirect:/user/cocktailwords";
+	    
+	 }
 
 }
