@@ -70,6 +70,12 @@ public class CocktailwordsService {
 	  Collections.sort(list3);
 	  
 	  for(int i = 0; i<list3.size(); i++) {
+		  if(ini.equals("ア")){
+			  if(list3.get(i).startsWith("^[\u30a0-\u30AA]+$")){
+				  list4.add(list3.get(i));
+			  }
+		  }
+		  
 		  if(list3.get(i).startsWith(ini)) {
 			  list4.add(list3.get(i));
 		  }
