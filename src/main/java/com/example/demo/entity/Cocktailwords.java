@@ -2,12 +2,10 @@ package com.example.demo.entity;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Id;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-
 import lombok.Data;
 
 /*
@@ -18,11 +16,13 @@ import lombok.Data;
 @Table(name = "カクテル言葉")
 public class Cocktailwords implements Serializable {
 	
+	@Id
+	@Column(name = "id")
+	private String id;
 	
 	@Column(name = "言葉カテゴリ") 
 	private String wordscategory ;
 	
-	@Id
 	@Column(name = "カクテル名")
 	private String cocktailwordsname;
 	
