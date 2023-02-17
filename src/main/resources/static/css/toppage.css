@@ -1,85 +1,110 @@
 @charset "UTF-8";
 
 .title{
-  padding: 180px 0 100px 0;
-  background-image: url(https://www.playing-housing.com/wp-content/uploads/2014/05/IMG_1942M3l.jpg);
-  background-size: cover;
-  background-position:50% 60%;
-  text-align: center;
-  color:white;
-}
-h1{
-	background:black;
-	margin:0 500px;
-	opacity: 0.8;
+	padding: 180px 0 100px 0;
+  	background-image: url(https://www.playing-housing.com/wp-content/uploads/2014/05/IMG_1942M3l.jpg);
+  	background-size: cover;
+  	background-position:50% 60%;
+  	text-align: center;
+  	color:white;
 }
 
+body{
+	background-color: black;
+}
+
+h1{
+	background: rgba(105,105,105,0.9);
+	margin:0 500px;
+	color: black;
+	font-style: italic;
+    font-family: Times New Roman, "メイリオ";
+}
 
 .list{
-  background-color: #239b76;
+	background-color: rgba(105,105,105,0.9);
+  	position: absolute;
+  	color: black;
+  	font-style: italic;
+  	font-family: Times New Roman, "メイリオ";
 }
 
 .love{
-	background-color: #d63384;
-	min-width:200px;
-	min-height:100px;
-	max-height:100px;
-	margin:10px;
-	border-radius: 100px;
-	line-height: 100px;
-}
-.friendship{
-	background-color: blue;
-	min-width:200px;
-	min-height:100px;
-	max-height:100px;
-	margin:10px;
-	border-radius: 100px;
-	line-height: 100px;
-}
-.self-enlightenment{
-	background-color: green;
-	min-width:200px;
-	min-height:100px;
-	max-height:100px;
-	margin:10px;
-	border-radius: 100px;
-	line-height: 100px;
+	margin:50px 0px 0px 0px;
+	font-size: 20px;
+	/*font-family: "Yu Gothic";*/
+	font-style: italic;
+  	font-family: Times New Roman, "メイリオ";
+	color: white;
+	font-style: oblique;
+    
 }
 
+.friendship{
+	margin:50px 0px 0px 0px;
+	font-size: 20px;
+	/*font-family: "Yu Gothic";*/
+	font-style: italic;
+  	font-family: Times New Roman, "メイリオ";
+	color: white;
+	font-style: oblique;
+	}
+
+.self-enlightenment{
+margin:50px 0px 0px 0px;
+	font-size: 20px;
+	/*font-family: "Yu Gothic";*/
+	font-style: italic;
+  	font-family: Times New Roman, "メイリオ";
+	color: white;
+	font-style: oblique;
+	}
+
 .unrequited-love{
-	background-color: yellow;
-	min-width:200px;
-	min-height:100px;
-	max-height:100px;
-	margin:10px;
-	border-radius: 100px;
-	line-height: 100px;
-}
+margin:50px 0px 0px 0px;
+	font-size: 20px;
+	/*font-family: "Yu Gothic";*/
+	font-style: italic;
+  	font-family: Times New Roman, "メイリオ";
+	color: white;
+	font-style: oblique;
+	}
+
 .broken-heart{
-	background-color: purple;
-	min-width:200px;
-	min-height:100px;
-	max-height:100px;
-	margin:10px;
-	border-radius: 100px;
-	line-height: 100px;
-}
+	margin:50px 0px 0px 0px;
+	font-size: 20px;
+	/*font-family: "Yu Gothic";*/
+	font-style: italic;
+  	font-family: Times New Roman, "メイリオ";
+	color: white;
+	font-style: oblique;
+	}
+
 .Aggressive{
-	background-color: red;
-	min-width:200px;
-	min-height:100px;
-	max-height:100px;
-	margin:10px;
-	border-radius: 100px;
-	line-height: 100px;
+	margin:50px 0px 0px 0px;
+	font-size: 20px;
+	/*font-family: "Yu Gothic";*/
+	font-style: italic;
+  	font-family: Times New Roman, "メイリオ";
+	color: white;
+	font-style: oblique;
+	}
+	
+.term{
+	margin:20px 0px 0px 0px;
+	font-size: 20px;
+	font-style: italic;
+    font-family: Times New Roman, "メイリオ";
+	color: white;
+	font-style: oblique;
 }
 
 .button top{
-  display: inline-block;
+ 	display: inline-block;
 }
-.button under{
-  display: inline-block;
+
+.button bottom{
+ 	display: inline-block;
 }
 
 .button{

@@ -9,29 +9,26 @@
 
 <link th:href="@{/css/toppage.css}" rel="stylesheet" type="text/css"/>
 <body>
-	<a th:href="@{/user/gojuuon}" class="btn list">一覧</a>
+
+	<a th:href="@{/user/gojuuon}" class="btn list">List</a>
 	
 	<div class="title">
 		<h1>CocktailWords</h1>
-		
 	</div>
 	
 	<div class="button">
 		<div class="button top">
-			<a th:href="@{/user/{wordscategory}(wordscategory=恋愛系)}"
-				class="btn love">恋愛系</a> 
-			<a th:href="@{/user/{wordscategory}(wordscategory=友情系)}"
-				class="btn friendship">友情系</a> 
-			<a th:href="@{/user/{wordscategory}(wordscategory=自己啓発系)}"
-				class="btn self-enlightenment">自己啓発系</a>
+			<a th:href="@{/user/{wordscategory}(wordscategory=恋愛系)}"class="btn love">💘Romantic</a> 
+			<a th:href="@{/user/{wordscategory}(wordscategory=友情系)}"class="btn friendship">🤝Friendship</a> 
+			<a th:href="@{/user/{wordscategory}(wordscategory=自己啓発系)}"class="btn self-enlightenment">💪Self-development</a>
+			<a th:href="@{/user/{wordscategory}(wordscategory=片思い系)}"class="btn unrequited-love">💓Unreuitedlove</a> 
+			<a th:href="@{/user/{wordscategory}(wordscategory=失恋系)}"class="btn broken-heart">💔Heartbreak</a>
+			<a th:href="@{/user/{wordscategory}(wordscategory=積極系)}"class="btn Aggressive">💋Aggressive</a>
 		</div>
-		<div class="button under">
-			<a th:href="@{/user/{wordscategory}(wordscategory=片思い系)}"
-				class="btn unrequited-love">片思い系</a> <a
-				th:href="@{/user/{wordscategory}(wordscategory=失恋系)}"
-				class="btn broken-heart">失恋系</a> <a
-				th:href="@{/user/{wordscategory}(wordscategory=積極系)}"
-				class="btn Aggressive">積極系</a>
+		
+		<div class = "button bottom">
+			<a th:href="@{/user/yougo}"class="btn term">📝CocktailTerm</a>
 		</div>
 	</div>
+	
 </body>
