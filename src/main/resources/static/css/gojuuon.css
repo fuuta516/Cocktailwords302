@@ -1,29 +1,55 @@
 @charset "UTF-8";
+/**/
+.list{
+	background-color: rgba(105,105,105,0.9);
+  	position: absolute;
+  	color: black;
+  	font-style: italic;
+  	font-family: Times New Roman, "メイリオ";
+}
 
+/**/
+.title{
+	padding: 180px 0 100px 0;
+  	background-image: url(https://www.loisir-naha.com/restaurant/img/planete/slides/main_01.jpg);
+  	background-size: cover;
+  	background-position:50% 60%;
+  	text-align: center;
+  	color:white;
+  		font-style: italic;
+  	font-family: Times New Roman, "メイリオ";
 
-/*背景*/
-.container {
-　　 　/*背景画像は高さを持たないため、heightの指定が必要*/ 
-　　　 height: 1280px; 
-      /*相対パスで画像ファイルを指定*/
-　　　 background-image: url(https://thumb.ac-illust.com/e1/e1e08df9fc46e81d926c3115adb9b1b9_t.jpeg);
+}
+body{
+	background-color: black;
 }
 
 
+button{
+	{
+	background: rgba(105,105,105,0.9);
+	margin:0 500px;
+	color: black;
+	font-style: italic;
+    font-family: Times New Roman, "メイリオ";
+}
+	
+}
 
 /* 見出し*/
-
-
-
 .container{
 	
-	font-size: 150%
-	padding: 0.1em 0.3em;
-	border-left: 10px solid #00BCD4;
+	background-color: rgba(105,105,105,0.9);
+  	position: absolute;
+  	color: black;
+  	font-style: italic;
+  	font-family: Times New Roman, "メイリオ"
 	
 	}
+
 	
-	
+
+/*	
 .cp_cssslider {
 	width: 700px;
 	height: 400px;
@@ -40,13 +66,13 @@
 }
 .cp_slidewrapper {
 	width: 300%;/* slideの枚数×100% */
-	position: relative;
+/*	position: relative;
 	left: 0;
 	animation: slider 20s infinite ease;/* スピード */
-}
+/*}
 @-webkit-keyframes slider {
 	/* 100%を枚数で割った%に割り振る */
-	0% {
+	/*0% {
 	-webkit-transform: translateX(0);
 	transform: translateX(0);
 	}
@@ -73,7 +99,7 @@
 }
 @keyframes slider {
 	/* 100%を枚数で割った%に割り振る */
-	0% {
+	/*0% {
 	-webkit-transform: translateX(0);
 	transform: translateX(0);
 	}
@@ -97,4 +123,23 @@
 	-webkit-transform: translateX(0);
 	transform: translateX(0);
 	}
+	*/
 }
+.cocktainame{
+	margin:50px 0px 0px 0px;
+	font-size: 20px;
+	/*font-family: "Yu Gothic";*/
+	font-style: italic;
+  	font-family: Times New Roman, "メイリオ";
+	color: white;
+	font-style: oblique;
+	}
+	
+.word{
+	margin:20px 0px 0px 0px;
+	font-size: 20px;
+	font-style: italic;
+    font-family: Times New Roman, "メイリオ";
+	color: white;
+	font-style: oblique;
+

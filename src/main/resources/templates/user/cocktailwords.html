@@ -5,18 +5,35 @@
 	th:replace="common/head :: head_fragment(title = 'カクテル言葉', scripts = ~{::script}, links = ~{::link})"></head>
 <title>CSS</title>
 <style>
-.title { 
-	background-color : black;
-	width: 200px;
-	height: 50px;
-	font-size: 30px;
+.title {
+	padding: 180px 0 100px 0;
+	background-image:
+		url(https://www.playing-housing.com/wp-content/uploads/2014/05/IMG_1942M3l.jpg);
+	background-size: cover;
+	background-position: 50% 60%;
+	text-align: center;
 	color: white;
-
 }
-li{list-style: none;
- }
- .list{font-size: 20px;
- }
+
+body {
+	background-color: black;
+}
+h1{
+	background: rgba(105,105,105,0.9);
+	margin:0 500px;
+	color: black;
+	font-style: italic;
+    font-family: Times New Roman, "メイリオ";
+}
+
+
+.list {
+	background-color: rgba(105, 105, 105, 0.9);
+	position: absolute;
+	color: black;
+	font-style: italic;
+	font-family: Times New Roman, "メイリオ";
+}
 
 .home {
 	float: right;
@@ -47,23 +64,23 @@ li{list-style: none;
 	color: red;
 }
 
-h1 {
+h2{
 	font-size: 30px;
 }
 
-img.example1 {
-	width: 1000px;
-	height: 300px;
-}
+
 </style>
 <body>
 	<div class="container">
+		<a th:href="@{/user/gojuuon}" class="btn list">List</a> 
+		<a th:href="@{/user/toppage}" class="home">トップページ</a>
 
-		<ul>
-			<li class="title">CocktailWords</li>
-			<li><a th:href="@{/user/toppage}" class="home">ホーム</a></li>
-			<li><a th:href="@{/user/gojuuon}" class="list">一覧</a></li>
-		</ul>
+
+
+		<div class="title">
+			<h1>CocktailWords</h1>
+		</div>
+
 
 		<div class="button">
 			<a th:href="@{/user/{wordscategory}(wordscategory=恋愛系)}" class="love">恋愛系</a>
@@ -83,12 +100,7 @@ img.example1 {
 
 
 		<p>
-
-
-			<img
-				src="https://cocktaillog.com/ja/assets/images/all_list_banner_01.jpg"
-				class="example1">
-		<h1>カクテル一覧</h1>
+		<h2>カクテル一覧</h2>
 
 
 		<div>
