@@ -2,28 +2,36 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 
-<head>
+
+<head
+	th:replace="common/head :: head_fragment(title = 'カクテル言葉', scripts = ~{::script}, links = ~{::link})">
+</head>
 <!--  <meta charset="UTF-8">-->
 <title>カクテル一覧</title>
 </head>
-<link th:href="@{/css/gojuuon.css}" rel="stylesheet" type="text/css" />
+<link th:href="@{/css/gojuuon.css}" rel="stylesheet" type="text/css">
 <meta http-equiv="Content-Style-Type" content="text/css">
+
 
 <body>
 <!-- 背景 -->
-<div class="container"> 
 
+
+<!-- 初めのページに戻る -->
+<div>
+<a th:href="@{/user/toppage}" class="btn list" >Top</a>
 </div>
-	<!-- 初めのページに戻る -->
+
 
 
 	<!-- ページトップ -->
-	<div style="font-size: 20pt">
-		<p class="container" th:text="カクテル一覧"></p>
+	<div class="title"style="font-size: 20pt">
+		<h1>Cocktail list</h1>
 	</div>
 
+
 	<!-- トップ写真 -->
-	<div class="cp_cssslider">
+	<!--  <div class="cp_cssslider">
 	<div class="cp_slidewrapper">
 		<div class="cp_slide_item"><img src="https://otokonokakurega.com/wp-content/uploads/2021/06/490f17474880c2c900a57a1c6932436d-3.jpg.webp"width="700" height="400"></div>
 		<div class="cp_slide_item"><img src="https://www.atpress.ne.jp/releases/196181/img_196181_1.jpg"width="900" height="550"></div>
@@ -32,11 +40,13 @@
 		
 	</div>
 </div>
+-->
 
 
 
-<div>
-<button type="button" class="btn btn-primary btn-lg">ア</button>
+
+<div style="text-align:center;">
+<a type="button" th:href = "@{/user/gojuuon/{ini}(ini = ア)}" class="btn btn-primary btn-lg">ア</a>
 <button type="button" class="btn btn-primary btn-lg">カ</button>
 <button type="button" class="btn btn-primary btn-lg">サ</button>
 <button type="button" class="btn btn-primary btn-lg">タ</button>
@@ -49,16 +59,21 @@
 </div>
 
 	<!-- 一覧リンク(カクテル名) -->
-	<div style="font-size: 16pt">
 	
-	<dl th:each="ct : ${cocktailwords}">
-			<dt><a
+	<div >
+	
+	<dl th:each="ct : ${cocktailwords}"style=:center >
+			<dt class="btn cocktainame"><a
 					th:href="@{/user/recipe/{cocktailwordsname}(cocktailwordsname=${ct.cocktailwordsname})}"
-					th:text="${ct.cocktailwordsname}"></a>
+					th:text="${ct.cocktailwordsname}"
+					></a>
 			</dt>
 			<!-- 一覧リンク（カクテル言葉） -->
-			<dt style="font-size: 12pt" >
-				<a class="fst-italic" th:text=" カクテル言葉：+${ct.words}"></a>
+			
+			<dt >
+			
+				<a  th:text=" word：+${ct.words}"
+				></a>
 			</dt>
 
 		</dl>
