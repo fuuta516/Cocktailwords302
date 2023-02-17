@@ -71,7 +71,7 @@ public class CocktailController {
 	 @GetMapping(value = "/user/recipe/{cocktailwordsname}")
 	  public String displayreview(Model model, @PathVariable String cocktailwordsname) {
 		Cocktailrecipe cocktailrecipe = cocktailrecipeService.findByIdcategory(cocktailwordsname);
-	    List<Review> review = reviewService.findByIdcategory("ビール");
+	    List<Review> review = reviewService.findByIdcategory(cocktailwordsname);
 	    model.addAttribute("cocktailrecipe", cocktailrecipe);
 	    model.addAttribute("review", review);
 	  //レシピページにレビュー欄を表示させる

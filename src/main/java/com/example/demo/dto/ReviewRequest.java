@@ -11,6 +11,8 @@ import lombok.Data;
 @Data
 public class ReviewRequest implements Serializable {
   
+  private Long id;
+  
   private Date hiduke;
 	
   private String cocktailwordsname;
