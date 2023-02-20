@@ -147,6 +147,12 @@ public class CocktailwordsService {
 					list4.add(list3.get(i));
 				}
 			}
+		}else {
+			for(int i = 0; i<list3.size(); i++) {
+				if(!(list3.get(i).charAt(0) >= 'ア'&& list3.get(i).charAt(0) <= 'ン')){
+					list4.add(list3.get(i));
+				}
+			}
 		}
 
 		List<Cocktailwords> list = searchAll();
