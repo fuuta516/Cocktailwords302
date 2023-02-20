@@ -1,6 +1,107 @@
 @charset "UTF-8";
 
 body{
-	background-image: url(https://www.playing-housing.com/wp-content/uploads/2014/05/IMG_1942M3l.jpg);
-	background-size: cover;
+	background-color: black;
+	color: white;
+}
+
+.title{
+	font-style: italic;
+  	font-family: Times New Roman, "メイリオ";
+  	margin:20px 0px 0px 50px;
+}
+
+.subtitle{
+	font-style: italic;
+  	font-family: Times New Roman, "メイリオ";
+  	margin:20px 0px 0px 80px;
+}
+
+.list{
+	/*background-color: rgba(105,105,105,0.9);*/
+  	position: relative;
+	top: 0px; left: 70px;
+  	color: white;
+  	font-style: italic;
+  	font-family: Times New Roman, "メイリオ";
+  	margin:20px 0px 0px 10px;
+  	text-decoration:underline;
+	text-decoration-color: white;
+  	
+}
+
+.home{
+	/*background-color: rgba(105,105,105,0.9);*/
+	position: relative;
+	top: 0px; left: 90px;
+  	color: white;
+  	font-style: italic;
+  	font-family: Times New Roman, "メイリオ";
+  	margin:20px 0px 0px 10px;
+  	text-decoration:underline;
+	text-decoration-color: white;
+}
+
+.love{
+	position: relative;
+	top: 0px; left: 90px;
+	color: white;
+  	font-style: italic;
+  	font-family: Times New Roman, "メイリオ";
+  	margin:50px 10px 10px 50px;
+}
+
+.friendship{
+	position: relative;
+	top: 0px; left: 90px;
+	color: white;
+  	font-style: italic;
+  	font-family: Times New Roman, "メイリオ";
+  	margin:50px 10px 10px 50px;
+}
+
+.self-enlightenment{
+	position: relative;
+	top: 0px; left: 90px;
+	color: white;
+  	font-style: italic;
+  	font-family: Times New Roman, "メイリオ";
+  	margin:50px 10px 10px 50px;
+}
+
+.unrequited-love{
+	position: relative;
+	top: 0px; left: 90px;
+	color: white;
+  	font-style: italic;
+  	font-family: Times New Roman, "メイリオ";
+  	margin:50px 10px 10px 50px;
+}
+
+.broken-heart{
+	position: relative;
+	top: 0px; left: 90px;
+	color: white;
+  	font-style: italic;
+  	font-family: Times New Roman, "メイリオ";
+  	margin:50px 10px 10px 50px;
+}
+
+.Aggressive{
+	position: relative;
+	top: 0px; left: 90px;
+	color: white;
+  	font-style: italic;
+  	font-family: Times New Roman, "メイリオ";
+  	margin:50px 10px 10px 50px;
+}
+
+.exp{
+	color: white;
+	position: relative;
+	top: 0px; left: 90px; right:90px;
+}
+
+.mean{
+	color: rgba(192, 192, 192, 1);
 }

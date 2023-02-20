@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
-	
-<head
-	th:replace="common/head :: head_fragment(title = 'カクテル製法用語', scripts = ~{::script}, links = ~{::link})">
-</head>
-<link th:href="@{/css/yougo.css}" rel="stylesheet" type="text/css"/>
+
+<head th:replace="common/head :: head_fragment(title = 'カクテル製法用語', scripts = ~{::script}, links = ~{::link})"></head>
+<link th:href="@{/css/yougo.css}" rel="stylesheet" type="text/css" />
 <body>
-	<div class="container">
-	
-    <h1>CocktailTerm</h1>
-    
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>用語</th>
-          <th>説明</th>
-        </tr>
-      </thead>
-      
-      <tbody>
-        <tr th:each="yougo : ${yougo}" class="align-middle">
-          <td th:text="${yougo.yougo}"></td>
-          <td th:text="${yougo.mean}"></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+
+	<a th:href="@{/user/gojuuon}" class="btn list">List</a>
+	<a th:href="@{/user/toppage}" class="btn home">Home</a>
+
+	<!-- <div class="title">
+		<h1>CocktailWords</h1>
+	</div> -->
+
+	<div class="button">
+		<div class="button top">
+			<a th:href="@{/user/{wordscategory}(wordscategory=恋愛系)}"class="love">💘Romantic</a>
+			<a th:href="@{/user/{wordscategory}(wordscategory=友情編)}"class="friendship">🤝Friendship</a>
+			<a th:href="@{/user/{wordscategory}(wordscategory=自己啓発系)}"class="self-enlightenment">💪Self-development</a>
+			<a th:href="@{/user/{wordscategory}(wordscategory=片思い)}"class="unrequited-love">💓Unreuitedlove</a>
+			<a th:href="@{/user/{wordscategory}(wordscategory=失恋)}"class="broken-heart">💔Heartbreak</a>
+			<a th:href="@{/user/{wordscategory}(wordscategory=積極系)}"class="Aggressive">💋Aggressive</a>
+		
+		</div>
+	</div>
+
+	<div>
+		<h1 class="title">🍸CocktailTerm</h1>
+		<p></p>
+
+			<div th:each="yougo : ${yougo}"class="exp">
+				<h6 th:text="${yougo.yougo}"class="yougo"></h6>
+				<p th:text="${yougo.mean}"class="mean"></p>
+				<p></p>
+			</div>
+	</div>
 </body>
 </html>
