@@ -102,7 +102,7 @@ public class CocktailController {
 	 }
 	 
 	 @GetMapping(value = "/user/gojuuon/{ini}")
-	  public String initial(Model model,@PathVariable String ini) {
+	  public String initial(Model model,@PathVariable char ini) {
 		 List<Cocktailwords> cocktailwords = cocktailwordsService.findByinitial(ini);
 		 model.addAttribute("cocktailwords", cocktailwords);
 		 
