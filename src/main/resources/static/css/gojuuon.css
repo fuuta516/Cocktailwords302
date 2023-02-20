@@ -1,40 +1,53 @@
 @charset "UTF-8";
-/**/
-.list{
-	background-color: rgba(105,105,105,0.9);
-  	position: absolute;
-  	color: black;
-  	font-style: italic;
-  	font-family: Times New Roman, "メイリオ";
-}
-
-/**/
-.title{
-	padding: 180px 0 100px 0;
-  	background-image: url(https://www.loisir-naha.com/restaurant/img/planete/slides/main_01.jpg);
-  	background-size: cover;
-  	background-position:50% 60%;
-  	text-align: center;
-  	color:white;
-  		font-style: italic;
-  	font-family: Times New Roman, "メイリオ";
-
-}
 body{
 	background-color: black;
 }
-
-
-button{
-	{
+h1{
 	background: rgba(105,105,105,0.9);
 	margin:0 500px;
 	color: black;
 	font-style: italic;
     font-family: Times New Roman, "メイリオ";
 }
+/*Topボタン*/
+.list{
+	background-color: rgba(105,105,105,0.9);
+  	position: absolute;
+  	color: black;
+  	font-style: italic;
+  	font-family: Times New Roman, "メイリオ";
+  	color: black;;
+	font-style: oblique;
+}
+
+/**/
+.title{
+	
+	padding: 180px 0 100px 0;
+  	background-image: url(https://www.loisir-naha.com/restaurant/img/planete/slides/main_01.jpg);
+  	background-size: cover;
+  	background-position:50% 60%;
+  	text-align: center;
+  	color:black;
+  		font-style: italic;
+  	font-family: Times New Roman, "メイリオ";
+  	}
+  	
+ button{
+	background-color: rgba(105,105,105,0.9);
+  	position: absolute;
+  	color: black;
+  	font-style: italic;
+  	font-family: Times New Roman, "メイリオ";
+  	color: black;
+	font-style: oblique;
+		
 	
 }
+
+
+
+
 
 /* 見出し*/
 .container{
