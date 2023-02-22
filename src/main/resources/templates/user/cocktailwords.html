@@ -37,32 +37,68 @@ h1{
 
 .home {
 	float: right;
+	background-color: rgba(105, 105, 105, 0.9);
+	
+	color: black;
+	font-style: italic;
+	font-family: Times New Roman, "メイリオ";
+}
+
+.love{
+	margin:50px 0px 0px 0px;
 	font-size: 20px;
+	font-style: italic;
+  	font-family: Times New Roman, "メイリオ";
+	color: white;
+	font-style: oblique;
+    
 }
 
-.love {
-	color: fuchsia;
-}
+.friendship{
+	margin:50px 0px 0px 0px;
+	font-size: 20px;
+	font-style: italic;
+  	font-family: Times New Roman, "メイリオ";
+	color: white;
+	font-style: oblique;
+	}
 
-.friendship {
-	color: blue;
-}
+.self-enlightenment{
+margin:50px 0px 0px 0px;
+	font-size: 20px;
+	font-style: italic;
+  	font-family: Times New Roman, "メイリオ";
+	color: white;
+	font-style: oblique;
+	}
 
-.self-enlightenment {
-	color: green;
-}
+.unrequited-love{
+margin:50px 0px 0px 0px;
+	font-size: 20px;
+	font-style: italic;
+  	font-family: Times New Roman, "メイリオ";
+	color: white;
+	font-style: oblique;
+	}
 
-.unrequited-love {
-	color: yellow;
-}
+.broken-heart{
+	margin:50px 0px 0px 0px;
+	font-size: 20px;
+	font-style: italic;
+  	font-family: Times New Roman, "メイリオ";
+	color: white;
+	font-style: oblique;
+	}
 
-.broken-heart {
-	color: purple;
-}
-
-.Aggressive {
-	color: red;
-}
+.Aggressive{
+	margin:50px 0px 0px 0px;
+	font-size: 20px;
+	font-style: italic;
+  	font-family: Times New Roman, "メイリオ";
+	color: white;
+	font-style: oblique;
+	}
+	
 
 h2{
 	font-size: 30px;
@@ -73,7 +109,7 @@ h2{
 <body>
 	<div class="container">
 		<a th:href="@{/user/gojuuon}" class="btn list">List</a> 
-		<a th:href="@{/user/toppage}" class="home">トップページ</a>
+		<a th:href="@{/user/toppage}" class="home">TOP</a>
 
 
 
@@ -83,18 +119,20 @@ h2{
 
 
 		<div class="button">
-			<a th:href="@{/user/{wordscategory}(wordscategory=恋愛系)}" class="love">恋愛系</a>
-			<a th:href="@{/user/{wordscategory}(wordscategory=友情編)}"
-				class="friendship">友情系</a> <a
-				th:href="@{/user/{wordscategory}(wordscategory=自己啓発系)}"
-				class="self-enlightenment">自己啓発系</a> <a
-				th:href="@{/user/{wordscategory}(wordscategory=片思い)}"
-				class="unrequited-love">片思い系</a> <a
-				th:href="@{/user/{wordscategory}(wordscategory=失恋)}"
-				class="broken-heart">失恋系</a> <a
-				th:href="@{/user/{wordscategory}(wordscategory=積極系)}"
-				class="Aggressive">積極系</a>
+		<div class="button top">
+			<a th:href="@{/user/{wordscategory}(wordscategory=恋愛系)}"class="btn love">💘Romantic</a> 
+			<a th:href="@{/user/{wordscategory}(wordscategory=友情編)}"class="btn friendship">🤝Friendship</a> 
+			<a th:href="@{/user/{wordscategory}(wordscategory=自己啓発系)}"class="btn self-enlightenment">💪Self-development</a>
+			<a th:href="@{/user/{wordscategory}(wordscategory=片思い)}"class="btn unrequited-love">💓Unreuitedlove</a> 
+			<a th:href="@{/user/{wordscategory}(wordscategory=失恋)}"class="btn broken-heart">💔Heartbreak</a>
+			<a th:href="@{/user/{wordscategory}(wordscategory=積極系)}"class="btn Aggressive">💋Aggressive</a>
 		</div>
+
+		<div class = "button bottom">
+			<a th:href="@{/user/yougo}"class="btn term">📝CocktailTerm</a>
+		</div>
+	</div>
+
 
 
 

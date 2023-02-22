@@ -56,6 +56,7 @@ public class CocktailwordsService {
 	public ArrayList<Cocktailwords> findByIdcategory(String wordscategory) {
 		List<Cocktailwords> list = searchAll();
 		ArrayList<Cocktailwords> list2 = new ArrayList<Cocktailwords>();
+		
 		for(int i = 0; i<list.size(); i++) {
 			if(list.get(i).getWordscategory().equals(wordscategory)) {
 				list2.add(list.get(i));
